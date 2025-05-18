@@ -1,10 +1,5 @@
 version = 1
 
-[envs.termdbms]
-channels = ["conda-forge"]
-dependencies = { termdbms = "*" }
-exposed = { termdbms = "termdbms" }
-
 [envs.nvim]
 channels = ["conda-forge"]
 dependencies = { nvim = "*" }
@@ -69,3 +64,8 @@ exposed = { tldr = "tldr" }
 channels = ["conda-forge"]
 dependencies = { lazygit = "*" }
 exposed = { lazygit = "lazygit" }
+
+[envs.gh]
+channels = ["conda-forge"]
+dependencies = { gh = "*" }
+exposed = { gh = "gh" }

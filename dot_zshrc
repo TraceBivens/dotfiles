@@ -1,0 +1,56 @@
+#export PATH="$HOME/neovim/bin:$PATH"
+export VISUAL=nvim
+export EDITOR=nvim
+export tacc=trace@ls6.tacc.utexas.edu
+export cruntch4=rmb0155@cruntch4.chem.unt.edu
+alias vesta="/Applications/VESTA.app/Contents/MacOS/VESTA" 
+alias ls="eza --icons=always"
+alias test="echo pwd"
+alias intel='env /usr/bin/arch -x86_64 /bin/zsh --login'
+alias arm='env /usr/bin/arch -arm64 /bin/zsh --login'
+
+# --- Pixi stuff ---
+export PATH=/Users/robertbivens/.pixi/bin:$PATH
+export PATH="/Users/robertbivens/.pixi/bin:$PATH"
+#eval "$(pixi completion --shell zsh)"
+
+# --- zsh-vi-mode ---
+
+# history setup
+HISTFILE=$HOME/.zhistory
+SAVEHIST=1000
+HISTSIZE=999
+setopt share_history
+setopt hist_expire_dups_first
+setopt hist_ignore_dups
+setopt hist_verify
+
+# completion using arrow keys (based on history)
+bindkey '^[[A' history-search-backward
+bindkey '^[[B' history-search-forward
+
+# ---- Zoxide (better cd) ----
+eval "$(zoxide init zsh)"
+
+
+# ---- UNT vpn connect -----     
+alias vpn='scutil --nc start "VPN (Cisco IPSec)" --user rmb0155 --password rimfup-sUgkax-5jysza --secret untvpnaccess'
+
+# ---- rsync ----
+alias rsync='rsync -rauP'
+
+. "$HOME/.local/bin/env"
+
+# --- yazi ----
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
+
+# ~/.zshrc
+
+eval "$(starship init zsh)"

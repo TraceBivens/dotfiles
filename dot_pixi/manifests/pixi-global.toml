@@ -1,0 +1,71 @@
+version = 1
+
+[envs.termdbms]
+channels = ["conda-forge"]
+dependencies = { termdbms = "*" }
+exposed = { termdbms = "termdbms" }
+
+[envs.nvim]
+channels = ["conda-forge"]
+dependencies = { nvim = "*" }
+exposed = { nvim = "nvim" }
+
+[envs.yazi]
+channels = ["conda-forge"]
+dependencies = { yazi = "*" }
+exposed = { ya = "ya", yazi = "yazi" }
+
+[envs.zoxide]
+channels = ["conda-forge"]
+dependencies = { zoxide = "*" }
+exposed = { zoxide = "zoxide" }
+
+[envs.eza]
+channels = ["conda-forge"]
+dependencies = { eza = "*" }
+exposed = { eza = "eza" }
+
+[envs.starship]
+channels = ["conda-forge"]
+dependencies = { starship = "*" }
+exposed = { starship = "starship" }
+
+[envs.euporie]
+channels = ["conda-forge"]
+dependencies = { euporie = "*", mp-api = "*", pymatgen = "*", ase = "*", ipykernel = "*", ipywidgets = "*" , py4vasp = "*", rich = "*" }
+exposed = { euporie = "euporie", euporie-console = "euporie-console", euporie-notebook = "euporie-notebook", euporie-preview = "euporie-preview", euporie-hub = "euporie-hub" , python = "python", ase = "ase", pmg = "pmg" }
+
+[envs.ripgrep]
+channels = ["conda-forge"]
+dependencies = { ripgrep = "*" }
+exposed = { rg = "rg" }
+
+[envs.fd-find]
+channels = ["conda-forge"]
+dependencies = { fd-find = "*" }
+exposed = { fd = "fd" }
+
+[envs.fzf]
+channels = ["conda-forge"]
+dependencies = { fzf = "*" }
+exposed = { fzf = "fzf" }
+
+[envs.uv]
+channels = ["conda-forge"]
+dependencies = { uv = "*" }
+exposed = { uv = "uv", uvx = "uvx" }
+
+[envs.chezmoi]
+channels = ["conda-forge"]
+dependencies = { chezmoi = "*" }
+exposed = { chezmoi = "chezmoi" }
+
+[envs.tldr]
+channels = ["conda-forge"]
+dependencies = { tldr = "*" }
+exposed = { tldr = "tldr" }
+
+[envs.lazygit]
+channels = ["conda-forge"]
+dependencies = { lazygit = "*" }
+exposed = { lazygit = "lazygit" }

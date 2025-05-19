@@ -4,3 +4,5 @@ require("zoxide"):setup({
 })
 
 require("starship"):setup()
+
+require("rich-cli"):setup()

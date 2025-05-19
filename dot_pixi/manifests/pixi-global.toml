@@ -69,8 +69,3 @@ exposed = { lazygit = "lazygit" }
 channels = ["conda-forge"]
 dependencies = { gh = "*" }
 exposed = { gh = "gh" }
-
-[envs.glow-md]
-channels = ["conda-forge"]
-dependencies = { glow-md = "*" }
-exposed = { glow = "glow" }

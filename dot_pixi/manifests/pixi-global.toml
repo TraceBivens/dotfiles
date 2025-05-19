@@ -7,7 +7,7 @@ exposed = { nvim = "nvim" }
 
 [envs.yazi]
 channels = ["conda-forge"]
-dependencies = { yazi = "*" }
+dependencies = { yazi = "*" , rich-cli = "*" }
 exposed = { ya = "ya", yazi = "yazi" }
 
 [envs.zoxide]

@@ -69,3 +69,8 @@ exposed = { lazygit = "lazygit" }
 channels = ["conda-forge"]
 dependencies = { gh = "*" }
 exposed = { gh = "gh" }
+
+[envs.direnv]
+channels = ["conda-forge"]
+dependencies = { direnv = "*" }
+exposed = { direnv = "direnv" }

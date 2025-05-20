@@ -69,8 +69,3 @@ exposed = { lazygit = "lazygit" }
 channels = ["conda-forge"]
 dependencies = { gh = "*" }
 exposed = { gh = "gh" }
-
-[envs.rich-cli]
-channels = ["conda-forge"]
-dependencies = { rich-cli = "*" }
-exposed = { rich = "rich" }

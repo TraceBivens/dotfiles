@@ -1,10 +1,5 @@
 version = 1
 
-[envs.nvim]
-channels = ["conda-forge"]
-dependencies = { nvim = "*" }
-exposed = { nvim = "nvim" }
-
 [envs.yazi]
 channels = ["conda-forge"]
 dependencies = { yazi = "*" }
@@ -27,8 +22,8 @@ exposed = { starship = "starship" }
 
 [envs.euporie]
 channels = ["conda-forge"]
-dependencies = { euporie = "*", mp-api = "*", pymatgen = "*", ase = "*", ipykernel = "*", ipywidgets = "*" , py4vasp = "*", rich = "*" , custodian = "*" }
-exposed = { euporie = "euporie", euporie-console = "euporie-console", euporie-notebook = "euporie-notebook", euporie-preview = "euporie-preview", euporie-hub = "euporie-hub" , python = "python", ase = "ase", pmg = "pmg" }
+dependencies = { euporie = "*", mp-api = "*", pymatgen = "*", ase = "*", ipykernel = "*", ipywidgets = "*" , py4vasp = "*", rich = "*" , custodian = "*" , nvim = "*" }
+exposed = { euporie = "euporie", euporie-console = "euporie-console", euporie-notebook = "euporie-notebook", euporie-preview = "euporie-preview", euporie-hub = "euporie-hub" , python = "python", ase = "ase", pmg = "pmg" , nvim = "nvim" }
 
 [envs.ripgrep]
 channels = ["conda-forge"]

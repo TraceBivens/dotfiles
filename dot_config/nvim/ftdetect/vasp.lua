@@ -3,6 +3,6 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   callback = function()
     vim.bo.filetype = "vasp"
     vim.bo.commentstring = "#%s"
-    vim.bo.syntax = true
+    vim.bo.syntax = "ON"
   end,
 })

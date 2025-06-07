@@ -1,0 +1,72 @@
+#export PATH="$HOME/neovim/bin:$PATH"
+export VISUAL=nvim
+export EDITOR=nvim
+export tacc=trace@ls6.tacc.utexas.edu
+export cruntch4=rmb0155@cruntch4.chem.unt.edu
+alias vesta="/Applications/VESTA.app/Contents/MacOS/VESTA" 
+alias test="echo pwd"
+alias intel='env /usr/bin/arch -x86_64 /bin/zsh --login'
+alias arm='env /usr/bin/arch -arm64 /bin/zsh --login'
+alias tacc='kitten ssh $tacc'
+alias cruntch='kitten ssh $cruntch4'
+alias cdh='z ~'
+# --- Pixi stuff ---
+export PATH="/Users/robertbivens/.pixi/bin:$PATH"
+#eval "$(pixi completion --shell zsh)"
+
+# --- zsh-vi-mode ---
+
+# history setup
+HISTFILE=$HOME/.zhistory
+SAVEHIST=1000
+HISTSIZE=999
+setopt share_history
+setopt hist_expire_dups_first
+setopt hist_ignore_dups
+setopt hist_verify
+
+# completion using arrow keys (based on history)
+bindkey '^[[A' history-search-backward
+bindkey '^[[B' history-search-forward
+
+# ---- Zoxide (better cd) ----
+eval "$(zoxide init zsh)"
+
+
+# ---- UNT vpn connect -----     
+alias vpn='scutil --nc start "VPN (Cisco IPSec)" --user rmb0155 --password rimfup-sUgkax-5jysza --secret untvpnaccess'
+
+# ---- rsync ----
+alias rsync='rsync -rauP'
+
+. "$HOME/.local/bin/env"
+
+# --- yazi ----
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
+
+# ~/.zshrc
+
+eval "$(starship init zsh)"
+
+# --- direnv ---
+eval "$(direnv hook zsh)"
+
+# eza - ls bindings
+alias ls='eza --color=always --group-directories-first --icons'
+alias ll='eza -la --icons --header --octal-permissions --group-directories-first'
+alias l='eza -bGF --header --git --color=always --group-directories-first --icons'
+alias llm='eza -lbGd --header --git --sort=modified --color=always --group-directories-first --icons'
+alias la='eza --long --all --group --header --group-directories-first'
+alias lx='eza -lbhHigUmuSa@ --time-style=long-iso --git --color-scale --color=always --group-directories-first --icons'
+
+alias lS='eza -1 --color=always --group-directories-first --icons'
+alias lt='eza --tree --level=2 --color=always --group-directories-first --icons'
+alias l.="eza -a | grep -E '^\.'"
+

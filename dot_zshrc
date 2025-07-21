@@ -33,8 +33,6 @@ bindkey '^[[B' history-search-forward
 eval "$(zoxide init zsh)"
 
 
-# ---- UNT vpn connect -----     
-alias vpn='scutil --nc start "VPN (Cisco IPSec)" --user rmb0155 --password rimfup-sUgkax-5jysza --secret untvpnaccess'
 
 # ---- rsync ----
 alias rsync='rsync -rauP'
